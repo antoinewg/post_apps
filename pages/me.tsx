@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react"
 import Layout from "../components/layout"
 
-export default async function MePage() {
+export default function MePage() {
   const { data } = useSession()
 
   return (
