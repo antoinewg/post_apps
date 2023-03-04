@@ -22,14 +22,19 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Database management
 
-To learn more about Next.js, take a look at the following resources:
+Make sure to have `.env` file configured correctly. Do not commit though.
+ 
+When adding a new table, or column, execute the SQL statement [locally](http://localhost:54323/), or by adding it manually.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then generate the migration with `pnpx prisma migrate dev --name migration_name`. This will add a file `prisma/migrations/<timestamp>_<migration_name>/migration.sql`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Optionaly, you can modify the `prisma/seed.ts` for when you reset the db locally.
+
+You can then commit and push the local migrations with `pnpx prisma db push`.
+
+Don't forget to re-generate the types: `pnpx prisma generate`.
 
 ## Deploy on Vercel
 
