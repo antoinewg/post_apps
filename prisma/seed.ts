@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma } from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient();
 
@@ -46,7 +46,8 @@ const userData = [
       ],
     },
   },
-] satisfies Prisma.UserCreateInput[]
+] 
+// satisfies Prisma.UserCreateInput[]
 
 async function main() {
   console.log(`Start seeding ...`)
